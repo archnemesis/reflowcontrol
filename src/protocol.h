@@ -16,6 +16,7 @@
 typedef struct {
   uint8_t mode;
   uint8_t status;
+  uint32_t timer;
   float temperature;
 } StatusMessage;
 
@@ -52,7 +53,7 @@ public:
   void setCommandCallback(void (*callback)(CommandMessage*));
   void setStoreProfileCallback(void (*callback)(StoreProfileMessage*));
   // void sendErrorMessage(uint8_t error_no, uint8_t error_code);
-  void sendStatusMessage(uint8_t mode, uint8_t status, float temperature);
+  void sendStatusMessage(uint8_t mode, uint8_t status, uint32_t timer, float temperature);
 protected:
   unsigned int m_bytesReceived;
   unsigned int m_bytesExpected;

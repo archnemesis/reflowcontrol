@@ -5,28 +5,34 @@ class Profile {
 public:
   Profile();
   void setName(const char *name);
-  void setRampToSoakRate(int rate);
-  void setSoakTemperature(int temp);
-  void setSoakTime(int time);
-  void setRampToPeakRate(int rate);
-  void setPeakTemperature(int temp);
-  void setRampCoolingRate(int rate);
+  void setRampToSoakRate(unsigned int rate);
+  void setSoakTemperature(unsigned int temp);
+  void setSoakTime(unsigned int time);
+  void setRampToPeakRate(unsigned int rate);
+  void setPeakTemperature(unsigned int temp);
+  void setRampCoolingRate(unsigned int rate);
 
   const char *name();
-  int rampToSoakRate();
-  int soakTemperature();
-  int soakTime();
-  int rampToPeakRate();
-  int peakTemperature();
-  int rampCoolingRate();
+  unsigned int rampToSoakRate();
+  unsigned int soakTemperature();
+  unsigned int soakTime();
+  unsigned int rampToPeakRate();
+  unsigned int peakTemperature();
+  unsigned int rampCoolingRate();
+
+  unsigned int rampToSoakTime(float ambient);
+  unsigned int rampToPeakTime();
+  unsigned int coolingTime(float ambient);
+
+  unsigned int totalTime(float ambient);
 protected:
   char m_name[16];
-  int m_rampToSoakRate;
-  int m_soakTemperature;
-  int m_soakTime;
-  int m_rampToPeakRate;
-  int m_peakTemperature;
-  int m_rampCoolingRate;
+  unsigned int m_rampToSoakRate;
+  unsigned int m_soakTemperature;
+  unsigned int m_soakTime;
+  unsigned int m_rampToPeakRate;
+  unsigned int m_peakTemperature;
+  unsigned int m_rampCoolingRate;
 };
 
 #endif

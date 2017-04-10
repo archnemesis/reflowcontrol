@@ -105,11 +105,12 @@ void Protocol::inputChar(const unsigned char byte)
   }
 }
 
-void Protocol::sendStatusMessage(uint8_t mode, uint8_t status, float temperature)
+void Protocol::sendStatusMessage(uint8_t mode, uint8_t status, uint32_t timer, float temperature)
 {
   StatusMessage msg;
   msg.mode = mode;
   msg.status = status;
+  msg.timer = timer;
   msg.temperature = temperature;
 
   m_writeCharCallback(PROTOCOL_MSG_START);
